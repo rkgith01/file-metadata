@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>File Metadata | Raj Kapadia</title>
+    <link rel="shortcut icon" href="/public/logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/public/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="logoBox">
+      <img src="/public/logo.png" alt="logo" class="logo" />
+    </div>
+    <h1>File Metadata Microservice</h1>
+
+    <div class="container">
+      <h2>Usage:</h2>
+      <p>Please Upload a File ...</p>
+      <div class="view">
+        <h3 id="output"></h3>
+        <form
+          enctype="multipart/form-data"
+          method="POST"
+          action="/api/fileanalyse"
+        >
+          <input id="inputfield" type="file" name="upfile" />
+          <input id="button" type="submit" value="Upload" />
+        </form>
+      </div>
+    </div>
+    <section class="how">
+      <h1>How it works</h1>
+      <ul>
+        <li>
+          <strong>Upload Trigger:</strong> When a user selects a file and clicks
+          "Upload", the form data is sent to the server via a POST request to
+          the <code>/api/fileanalyse</code> endpoint.
+        </li>
+        <li>
+          <strong>Server Interaction:</strong> The server processes the uploaded
+          file and returns metadata including its name, type, and size as a JSON
+          response.
+        </li>
+        <li>
+          <strong>Sugestion:</strong> Dynamic Display: The received metadata is dynamically
+          displayed on the webpage in the designated section, providing instant feedback to the user without needing a page refresh.
+        </li>
+        <li>
+          <strong>JSON Preview:</strong> On clicking the upload button user are redirected to view the file in JSON format.
+        </li>
+      </ul>
+    </section>
+    <section class="codeResponse">
+      <h2>How the response looks </h2>
+      <pre>
+        <code>
+          {
+            "name": "logo.png",
+            "type": "image/png",
+            "size": 30588
+          }
+        </code>
+      </pre>
+    </section>
+    <div class="footer">
+      <p>
+        From
+        <a target="_blank" href="http://www.freecodecamp.com">freeCodeCamp</a>
+      </p>
+      <p>
+        Made by
+        <a target="_blank" href="https://github.com/rkgith01">Raj Kapadia</a>
+      </p>
+    </div>
+  </body>
+  <script></script>
+</html>
